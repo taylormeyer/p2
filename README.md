@@ -1,12 +1,13 @@
 # Project 2
-+ By: *your first and last name*
-+ Production URL: <http://p2.yourdomain.com>
++ By: *Taylor Meyer*
++ Production URL: <http://p2.taylormeyer.site/>
 
 ## Outside resources
-*your list of outside resources go here*
+* https://github.com/susanBuck/dwa15-php/blob/master/validation.php*
+* https://github.com/susanBuck/dwa15-php/blob/master/includes/Form.php*
 
 ## Code style divergences
-*list any divergences from PSR-1/PSR-2 and course guidelines on code style*
+*No attempted divergences from PSR-1/PSR-2 and course guidelines on code style*
 
 ## Notes for instructor
-*any notes for me to refer to while grading; if none, omit this section*
+*Working hard to improve from last time! Fingers crossed!*
