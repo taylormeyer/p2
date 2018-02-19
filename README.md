@@ -3,8 +3,9 @@
 + Production URL: <http://p2.taylormeyer.site/>
 
 ## Outside resources
-* https://github.com/susanBuck/dwa15-php/blob/master/validation.php*
-* https://github.com/susanBuck/dwa15-php/blob/master/includes/Form.php*
+* https://github.com/susanBuck/dwa15-php/blob/master/validation.php 
+* https://github.com/susanBuck/dwa15-php/blob/master/includes/Form.php
+* https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css
 
 ## Code style divergences
 *No attempted divergences from PSR-1/PSR-2 and course guidelines on code style*
