@@ -1,7 +1,7 @@
 <?php
 //
 $form = new p2\Form($_GET);
-//if ($_GET) {
+if ($_GET) {
     //$form = new p2\Form($_GET);
 
     if ($form->isSubmitted()) {
