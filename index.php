@@ -23,10 +23,10 @@ require('logic.php');
 <h2 class="text-center">The Magic Bill Splitter</h2>
 <form name='bill-splitter' id='bill-splitter' method='get' class="billform">
     <div class="row form-group">
-        <div class="col-sm-5">
+        <div class="col-sm-5 text-right">
             <label class="">Split how many ways? <span>* Required</span></label>
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-5">
             <input type='text'
                    name='split_way'
                    class='form-control'
@@ -35,18 +35,18 @@ require('logic.php');
         </div>
     </div>
     <div class="row form-group">
-        <div class="col-sm-6 text-right">
+        <div class="col-sm-5 text-right">
             <label class="">How much was the tab? <span>* Required</span></label>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <input type='text' class="form-control" name='tab' id='tab' value='<?= $form->prefill('tab', '') ?>'>
         </div>
     </div>
     <div class="row form-group">
-        <div class="col-sm-6 text-right">
+        <div class="col-sm-5 text-right">
             <label class="">How was the service?</label>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <select name='service-tip' id='service-tip' class="form-control">
                 <option value='18' <?php if (isset($_GET) and $_GET['service-tip'] == '18'): ?> selected="selected"<?php endif; ?>>Good (18% tip)</option>
                 <option value='15' <?php if (isset($_GET) and $_GET['service-tip'] == '15'): ?> selected="selected"<?php endif; ?>>OK (15% tip)</option>
@@ -55,10 +55,10 @@ require('logic.php');
         </div>
     </div>
     <div class="row form-group">
-        <div class="col-sm-6 text-right">
+        <div class="col-sm-5 text-right">
             <label class="">Round up?</label>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <input type='checkbox'
                    name='round-up'
                    id='round-up'
