@@ -48,9 +48,9 @@ require('logic.php');
         </div>
         <div class="col-sm-5">
             <select name='service-tip' id='service-tip' class="form-control">
-                <option value='18' <?php if (isset($_GET) and $_GET['service-tip'] == '18'): ?> selected="selected"<?php endif; ?>>Good (18% tip)</option>
-                <option value='15' <?php if (isset($_GET) and $_GET['service-tip'] == '15'): ?> selected="selected"<?php endif; ?>>OK (15% tip)</option>
-                <option value='10' <?php if (isset($_GET) and $_GET['service-tip'] == '10'): ?> selected="selected"<?php endif; ?>>Poor (10% tip)</option>
+                <option value='18' <?php if ($form->has('service-tip') and $form->get('service-tip','') == '18'): ?> selected="selected"<?php endif; ?>>Good (18% tip)</option>
+                <option value='15' <?php if ($form->has('service-tip') and $form->get('service-tip','') == '15'): ?> selected="selected"<?php endif; ?>>OK (15% tip)</option>
+                <option value='10' <?php if (($form->has('service-tip') and $form->get('service-tip','') == '10'): ?> selected="selected"<?php endif; ?>>Poor (10% tip)</option>
             </select>
         </div>
     </div>
@@ -62,7 +62,7 @@ require('logic.php');
             <input type='checkbox'
                    name='round-up'
                    id='round-up'
-                   value='yes' <?php if (isset($_GET['round-up']) and $_GET['round-up'] == 'yes'): ?> checked="checked"<?php endif; ?>>Yes
+                   value='yes' <?php if (($form->has('round-up') and $form->get('round-up','') == 'yes'): ?> checked="checked"<?php endif; ?>>Yes
         </div>
     </div>
     <br>
