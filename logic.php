@@ -1,7 +1,7 @@
 <?php
 //
 $form = new p2\Form($_GET);
-if ($_REQUEST) {
+//if ($_GET) {
     //$form = new p2\Form($_GET);
 
     if ($form->isSubmitted()) {
@@ -14,9 +14,9 @@ if ($_REQUEST) {
 
         if (!$errors) {
             $splitterVal = 0;
-            $subTotal = $_REQUEST['tab'] + ($_REQUEST['service-tip'] * $_REQUEST['tab'] / 100);
+            $subTotal = $_GET['tab'] + ($_GET['service-tip'] * $_GET['tab'] / 100);
             $splitterVal = $subTotal / $_REQUEST['split_way'];
-            if (isset($_REQUEST['round-up']) AND $_REQUEST['round-up'] == 'yes') {
+            if (isset($_GET['round-up']) and $_GET['round-up'] == 'yes') {
                 $splitterVal = ceil($splitterVal);
             }
         }

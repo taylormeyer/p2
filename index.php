@@ -1,7 +1,6 @@
 <?php
 require('Form.php');
 require('logic.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -18,21 +17,21 @@ require('logic.php');
           rel='stylesheet' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm'
           crossorigin='anonymous'>
     <link rel='stylesheet' href='styles.css'>
-
-
-
 </head>
 
 <body>
 <h2 class="text-center">The Magic Bill Splitter</h2>
-
-<form name='bill-splitter' id='albill-splitter' method='get' class="billform">
+<form name='bill-splitter' id='bill-splitter' method='get' class="billform">
     <div class="row form-group">
-        <div class="col-sm-6 text-right">
+        <div class="col-sm-5">
             <label class="">Split how many ways? <span>* Required</span></label>
         </div>
-        <div class="col-sm-6">
-            <input type='text' name='split_way' class='form-control' id='split_way' value='<?=$form->prefill('split_way', '') ?>'>
+        <div class="col-sm-7">
+            <input type='text'
+                   name='split_way'
+                   class='form-control'
+                   id='split_way'
+                   value='<?= $form->prefill('split_way', '') ?>'>
         </div>
     </div>
     <div class="row form-group">
@@ -40,50 +39,51 @@ require('logic.php');
             <label class="">How much was the tab? <span>* Required</span></label>
         </div>
         <div class="col-sm-6">
-            <input type='text' class="form-control" name='tab' id='tab' value='<?=$form->prefill('tab', '') ?>'>
+            <input type='text' class="form-control" name='tab' id='tab' value='<?= $form->prefill('tab', '') ?>'>
         </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-6 text-right">
+            <label class="">How was the service?</label>
         </div>
-        <div class="row form-group">
-            <div class="col-sm-6 text-right">
-                <label class="">How was the service?</label>
-            </div>
-            <div class="col-sm-6">
-                <select name='service-tip' id='service-tip' class="form-control">
-                    <option value='18'  <?php if(isset($_REQUEST) AND $_REQUEST['service-tip'] == '18'): ?> selected="selected"<?php endif; ?>>Good (18% tip)</option>
-                    <option value='15' <?php if(isset($_REQUEST) AND $_REQUEST['service-tip'] == '15'): ?> selected="selected"<?php endif; ?>>OK (15% tip)</option>
-                    <option value='10' <?php if(isset($_REQUEST) AND $_REQUEST['service-tip'] == '10'): ?> selected="selected"<?php endif; ?>>Poor (10% tip)</option>
-                </select>
-            </div>
-            </div>
-            <div class="row form-group">
-                <div class="col-sm-6 text-right">
-                    <label class="">Round up?</label>
-                </div>
-                <div class="col-sm-6">
-                    <input type='checkbox' name='round-up' id='round-up' value='yes' <?php if(isset($_REQUEST['round-up']) AND $_REQUEST['round-up'] == 'yes'): ?> checked="checked"<?php endif; ?>>Yes
-                </div>
-                </div>
-
-                <br>
-                <div class="clearfix text-center">
-                <input type='submit' name='calculate' class='btn btn-primary' value='calculate' id='calculate'>
-                </div>
-                <br>
-                <?php if (isset($errors) and count($errors) > 0) : ?>
-                    <div class='alert alert-danger'>
-                        <ul>
-                            <?php foreach ($errors as $error) : ?>
-                                <li><?= $error ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                <?php endif; ?>
-                <?php if (isset($splitterVal)) : ?>
-                    <div class="alert alert-success text-center">
-                        Everyone owes $<?php echo $splitterVal; ?>
-                    </div>
-                <?php endif; ?>
+        <div class="col-sm-6">
+            <select name='service-tip' id='service-tip' class="form-control">
+                <option value='18' <?php if (isset($_GET) and $_GET['service-tip'] == '18'): ?> selected="selected"<?php endif; ?>>Good (18% tip)</option>
+                <option value='15' <?php if (isset($_GET) and $_GET['service-tip'] == '15'): ?> selected="selected"<?php endif; ?>>OK (15% tip)</option>
+                <option value='10' <?php if (isset($_GET) and $_GET['service-tip'] == '10'): ?> selected="selected"<?php endif; ?>>Poor (10% tip)</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-6 text-right">
+            <label class="">Round up?</label>
+        </div>
+        <div class="col-sm-6">
+            <input type='checkbox'
+                   name='round-up'
+                   id='round-up'
+                   value='yes' <?php if (isset($_GET['round-up']) and $_GET['round-up'] == 'yes'): ?> checked="checked"<?php endif; ?>>Yes
+        </div>
+    </div>
+    <br>
+    <div class="clearfix text-center">
+        <input type='submit' name='calculate' class='btn btn-primary' value='calculate' id='calculate'>
+    </div>
+    <br>
+    <?php if (isset($errors) and count($errors) > 0) : ?>
+        <div class='alert alert-danger'>
+            <ul>
+                <?php foreach ($errors as $error) : ?>
+                    <li><?= $error ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($splitterVal)) : ?>
+        <div class="alert alert-success text-center">
+            Everyone owes $<?php echo $splitterVal; ?>
+        </div>
+    <?php endif; ?>
 </form>
-
 </body>
 </html>
