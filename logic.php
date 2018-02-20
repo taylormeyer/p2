@@ -15,7 +15,7 @@ if ($_GET) {
         if (!$errors) {
             $splitterVal = 0;
             $subTotal = $_GET['tab'] + ($_GET['service-tip'] * $_GET['tab'] / 100);
-            $splitterVal = $subTotal / $_REQUEST['split_way'];
+            $splitterVal = number_format($subTotal / $_REQUEST['split_way'],2);
             if (isset($_GET['round-up']) and $_GET['round-up'] == 'yes') {
                 $splitterVal = ceil($splitterVal);
             }
